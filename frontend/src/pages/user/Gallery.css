@@ -1,0 +1,44 @@
+
+
+.container-buttons{
+    text-align: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.gallery-btn{
+    margin: 5px 10px;
+    padding: 5px 5px;
+    padding: 15px;
+    background:#ff5361;
+    color: #fff;
+    /* font-size: 15  px; */
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 30px;
+}
+
+.gallery-btn:hover{
+  opacity: 0.9;
+}
+
+.gallery-images {
+    height: 300px;
+    width: 100%;
+    box-shadow: 2px 1px 10px 2px grey;
+    margin: 10px;
+  }
+  
+  .container-images {
+    text-align: center;
+  }
+  
+  .container-Gallery {
+    margin: 5% 7%;
+  }
+  
+
+
+  

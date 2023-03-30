@@ -1,0 +1,31 @@
+.menu-container-main{
+    margin: 5% 7%;
+}
+
+.menu-container{
+    display: flex;
+    justify-content: center;
+}
+
+.menu-card{
+    /* padding-left: 20px; */
+    background-color: #fff;
+    width: 18rem;
+    margin: 2% 5%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 2px gray;
+    position: relative;
+}
+
+.discount{
+    position: absolute;
+    right: 0;
+    background-color: green;
+    padding: 5px;
+    color: white;
+    border-radius: 15px 0;
+}
+
+.card-img-top{
+    height: 170px;
+}

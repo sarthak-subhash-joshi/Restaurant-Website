@@ -1,0 +1,36 @@
+.ListedItems-container-main{
+    margin-top: 6%;
+    background-color: #E8F9FD;
+    border-radius: 20px;
+}
+
+.listed-items-img{
+    height: 100px;
+    width: 150px;
+    margin-right:40px ;
+    border-radius: 10px;
+}
+
+.lised-items-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+   
+}
+
+.listed-item{
+    display: flex;
+    margin-top: 20px;
+    background-color: #fff;
+    padding-top: 10px;
+    /* margin: 20px; */
+    position: relative;
+}
+
+.listed-item-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: #fff;
+}
