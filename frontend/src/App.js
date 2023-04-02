@@ -1,35 +1,34 @@
-import './App.css';
-import LandingPage from './pages/LandingPage'
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import HomeUser from './pages/user/Home'
-import HomeOwner from './pages/restaurant_owner/Home'
-import Menu from './pages/user/Menu';
-import Gallery from './pages/user/Gallery';
-import DetailsOfItem from './pages/user/DetailsOfItem';
+import "./App.css";
+import LandingPage from "./pages/LandingPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomeUser from "./pages/user/Home";
+import HomeOwner from "./pages/restaurant_owner/Home";
+import Menu from "./pages/user/Menu";
+import Gallery from "./pages/user/Gallery";
+import DetailsOfItem from "./pages/user/DetailsOfItem";
+import Login from "./pages/user/Login";
+import Register from "./pages/user/Register";
 
 function App() {
   return (
-   <>
-    
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/user" element={<HomeUser />} />
+          <Route path="/owner" element={<HomeOwner />} />
 
-     <BrowserRouter>
-    
-       <Routes>
+          {/* user side routes */}
 
-        <Route path="/" element={<LandingPage/>} />
-        <Route path="/user" element={<HomeUser/>} />
-        <Route path="/owner" element={<HomeOwner/>} />
-
-         {/* user side routes */}
-        
-         <Route path='/userMenu' element={<Menu/>} />
-         <Route path='/gallery' element={<Gallery/>} />
-         <Route path='/userMenu/menu/:id' element={<DetailsOfItem/>}/>
-         {/* user side routes ends */}
-         
+          <Route path="/userMenu" element={<Menu />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/userMenu/menu/:id" element={<DetailsOfItem />} />
+          {/* user side routes ends */}
         </Routes>
-     </BrowserRouter>
-   </>
+      </BrowserRouter>
+    </>
   );
 }
 
