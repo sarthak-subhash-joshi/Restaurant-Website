@@ -9,16 +9,16 @@ export const UserContext = createContext();
 
 // provider
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   useEffect(() => {
     const tokenCheck = async () => {
       try {
-        const user = await axios.get("/auth/getById");
-        console.log(user);
-        if (user.status === 200) {
-          setUser(user.data);
+        const userData = await axios.get("/auth/getById");
+        console.log(userData);
+        if (userData.status === 200 && !user) {
+          setUser(userData.data.data.user);
           setIsUserLoggedIn(true);
         }
       } catch (error) {
@@ -30,7 +30,9 @@ export const UserProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, isUserLoggedIn }}>
+    <UserContext.Provider
+      value={{ user, isUserLoggedIn, setIsUserLoggedIn, setUser }}
+    >
       {children}
     </UserContext.Provider>
   );

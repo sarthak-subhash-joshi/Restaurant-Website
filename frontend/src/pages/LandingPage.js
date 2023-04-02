@@ -1,12 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./LandingPage.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import myImg from "./user/myImage.jfif";
 import { useUserContext } from "../context/userContext";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LandingPage = () => {
-  const nav = useNavigate();
+  const navigate = useNavigate();
   const { user, isUserLoggedIn } = useUserContext();
+  console.log(user, isUserLoggedIn);
+
+  const logoutUser = async () => {
+    try {
+      const res = await axios.get("/auth/logout");
+      if (res.status === 200) {
+        toast.success(res.data.message);
+
+        // add small delay
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="container-fluid landing-container">
@@ -14,18 +34,35 @@ const LandingPage = () => {
         <div>
           <h1>Restaurant</h1>
         </div>
-        {isUserLoggedIn ? (
-          <h4 style={{ color: "black" }}>Hi, {user?.data?.user?.name}</h4>
-        ) : (
-          <div>
-            <button
-              className="btn btn-outline-danger"
-              onClick={() => nav("/login")}
+        <div className="button-div">
+          {user?.isOwner && (
+            <div>
+              <button
+                className="btn btn-outline-danger"
+                onClick={() => navigate("/owner")}
+              >
+                ADMIN
+              </button>
+            </div>
+          )}
+          {isUserLoggedIn ? (
+            <h4
+              style={{ color: "black", cursor: "pointer", margin: "0px" }}
+              onClick={logoutUser}
             >
-              SIGN IN
-            </button>
-          </div>
-        )}
+              Hi, {user?.name}
+            </h4>
+          ) : (
+            <div>
+              <button
+                className="btn btn-outline-danger"
+                onClick={() => navigate("/login")}
+              >
+                SIGN IN
+              </button>
+            </div>
+          )}
+        </div>
       </div>
       <section className="row section-block">
         <div className="tagline col-md-6">
@@ -46,6 +83,7 @@ const LandingPage = () => {
           <img src={myImg} alt="Food Item" className="dosa-img" />
         </div>
       </section>
+      <ToastContainer />
     </div>
   );
 };

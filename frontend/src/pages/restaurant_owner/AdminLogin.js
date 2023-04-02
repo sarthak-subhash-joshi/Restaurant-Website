@@ -1,26 +1,25 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Login.css";
+import "../user/Login.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import { UserContext } from "../../context/userContext";
 import "react-toastify/dist/ReactToastify.css";
+import { useUserContext } from "../../context/userContext";
 
-const Login = () => {
+const AdminLogin = () => {
   const [userData, setUserData] = useState({
     email: "",
     password: "",
   });
-  const { user, isUserLoggedIn, setUser, setIsUserLoggedIn } =
-    useContext(UserContext);
+  const { user, isUserLoggedIn } = useUserContext();
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isUserLoggedIn) {
-      navigate("/", { replace: true });
+    if (isUserLoggedIn && user.isOwner) {
+      navigate("/owner");
     }
-  }, [isUserLoggedIn]);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,14 +31,12 @@ const Login = () => {
 
   const loginUser = async () => {
     try {
-      const res = await axios.post("/auth/login", userData);
+      const res = await axios.post("/auth/admin/login", userData);
       if (res.status === 200) {
         toast.success(res.data.message);
-        setUser(res.data.data.user);
-        setIsUserLoggedIn(true);
         // add small delay
         setTimeout(() => {
-          navigate("/");
+          navigate("/owner");
         }, 3000);
       } else {
         toast.error(res.data.message);
@@ -51,7 +48,9 @@ const Login = () => {
   return (
     <div className="login-page">
       <div className="login-box">
-        <h1 className="title-content">Hurry up Your Meal is Waiting🤤</h1>
+        <h1 className="title-content">
+          Hurry up Your Customers are Waiting for food
+        </h1>
         <input
           type="text"
           className="name"
@@ -71,16 +70,10 @@ const Login = () => {
         <button className="btn btn-success btn-login" onClick={loginUser}>
           Login
         </button>
-        <p className="p-register-account">
-          Don't have account?{" "}
-          <a className="p-register" href="/register">
-            Register
-          </a>
-        </p>
       </div>
       <ToastContainer />
     </div>
   );
 };
 
-export default Login;
+export default AdminLogin;

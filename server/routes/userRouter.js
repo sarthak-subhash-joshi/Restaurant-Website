@@ -5,6 +5,8 @@ const {
   registerUser,
   loginUser,
   getUserByID,
+  adminLogin,
+  logout,
 } = require("../controller/userController");
 const Authenticated = require("../middleware/auth");
 // Router express
@@ -18,5 +20,9 @@ userRouter.post("/login", loginUser);
 userRouter.get("/getAll", Authenticated, getAllUsers);
 // Get user by id
 userRouter.get("/getById", Authenticated, getUserByID);
+// Logout user
+userRouter.get("/logout", logout);
+// admin login
+userRouter.post("/admin/login", adminLogin);
 
 module.exports = userRouter;
