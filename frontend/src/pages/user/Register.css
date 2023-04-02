@@ -1,83 +1,88 @@
 .register-page {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    margin: auto;
-    left: 0;
-    background-color: rgb(197, 236, 148);
-    z-index: -1;
-    font-family: "Poppins";
-    overflow: hidden;
-    scrollbar-width: 0;
-  }
-  
-  /* .img-col {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  margin: auto;
+  left: 0;
+  background-color: rgb(197, 236, 148);
+  z-index: -1;
+  font-family: "Poppins";
+  overflow: hidden;
+  scrollbar-width: 0;
+}
+
+/* .img-col {
     position: absolute;
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
   } */
-  
-  .bgimg {
-    margin: 0;
-    height: 100vh;
-  }
-  
-  .title-content {
-    color: #416d2b;
-    font-weight: 400;
-    z-index: 5;
-  }
-  
+
+.bgimg {
+  margin: 0;
+  height: 100vh;
+}
+
+.title-content {
+  color: #416d2b;
+  font-weight: 400;
+  z-index: 5;
+}
+
+.register-box {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  width: 30%;
+  border-radius: 15px;
+  height: fit-content;
+  box-shadow: inset;
+  z-index: 5;
+  margin: 0 auto;
+  bottom: 3%;
+}
+
+@media screen and (max-width: 780px) {
   .register-box {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 15px;
-    width: 30%;
-    border-radius: 15px;
-    height: fit-content;
-    box-shadow: inset;
-    z-index: 5;
-    margin: 0 auto;
-    bottom: 3%;
+    width: 75%;
   }
-  
-  .email,
-  .name,
-  .pass,
-  .confirm-pass,
-  .btn-login {
-    width: 100%;
-    padding: 5px;
-    margin: 15px auto;
-    size: 50px;
-    height: 40px;
-    font-size: larger;
-    font-weight: 500;
-    color: black;
+}
+
+.email,
+.name,
+.pass,
+.confirm-pass,
+.btn-login {
+  width: 100%;
+  padding: 5px;
+  margin: 15px auto;
+  size: 50px;
+  height: 40px;
+  font-size: larger;
+  font-weight: 500;
+  color: black;
+}
+
+.email,
+.name,
+.pass,
+.confirm-pass {
+  background-color: transparent;
+}
+
+.p-register-account {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.btn-login {
+  margin: 2% auto;
+  color: white;
+}
+
+@media screen and (max-width: 780px) {
+  .login-box {
+    width: 75%;
   }
-  
-  .email,
-  .name,
-  .pass,
-  .confirm-pass {
-    background-color: transparent;
-  }
-  
-  .p-register-account {
-    margin: 0;
-    padding: 5px 0;
-  }
-  
-  .btn-login {
-    margin: 2% auto;
-    color: white;
-  }
-  
-  @media screen and (max-width: 780px) {
-    .login-box {
-      width: 75%;
-    }
-  }
-  
+}
