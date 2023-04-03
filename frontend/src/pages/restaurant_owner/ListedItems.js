@@ -1,52 +1,43 @@
-import React,{useState,useEffect} from 'react'
-import './ListedItems.css'
-import ItemDetails from './ItemDetails';
+import React, { useState, useEffect } from "react";
+import "./ListedItems.css";
+import ItemDetails from "./ItemDetails";
+import { toast, ToastContainer } from "react-toastify";
 
 const ListedItems = () => {
-
   // fetching data
-  const [items,setItems] = useState(null);
+  const [items, setItems] = useState(null);
 
-  useEffect(()=>{
-    const fetchItems = async () =>{
-      const response = await fetch(`/api/menu`)
-      const json = await response.json()
-      
-      if(response.ok){
-          setItems(json);
+  useEffect(() => {
+    const fetchItems = async () => {
+      const response = await fetch(`/api/menu`);
+      const json = await response.json();
+
+      if (response.ok) {
+        setItems(json);
       }
-  }
-
-  fetchItems();
-  },[])
-
-
-
+    };
+    fetchItems();
+  }, []);
 
   return (
-   <>
+    <>
       <div className="ListedItems-container-main">
-        <h3 style={{margin:'3%',color:'#7149C6'}} >Listed Items</h3>
-         
-        <div className='lised-items-container'>
+        <h3 style={{ margin: "3%", color: "#7149C6" }}>Listed Items</h3>
 
-        {
-            items && items.map((elem)=>{
-              return(
+        <div className="lised-items-container">
+          {items &&
+            items.map((elem) => {
+              return (
                 <>
-                <ItemDetails key={elem._id} item={elem} />
+                  <ItemDetails key={elem._id} item={elem} toast={toast} />
                 </>
-              )
-            })
-          }
-
-         
-      
+              );
+            })}
         </div>
-
+        <ToastContainer />
       </div>
-   </>
-  )
-}
+    </>
+  );
+};
 
-export default ListedItems
+export default ListedItems;

@@ -41,7 +41,7 @@ const createItem = async (req, res) => {
       price,
       description,
     });
-    res.status(200).json(item);
+    res.status(200).json({ message: "Item Added Successfully", data: item });
   } catch (error) {
     res.status(400).json({ error: error.mesage });
   }
@@ -62,7 +62,7 @@ const deleteItem = async (req, res) => {
     return res.status(404).json({ error: "No such Item Exists ! " });
   }
 
-  res.status(200).json(item);
+  res.status(200).json({ messege: "Item Deleted Successfully" });
 };
 
 // Update a Workout

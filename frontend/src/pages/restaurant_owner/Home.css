@@ -1,8 +1,14 @@
-.owner-submit-form-container{
-    margin: 2% 5%;
+.owner-submit-form-container {
+  margin: 0 5%;
 }
 
-.home-img{
-    width: 100%;
-    height: 500px;
+@media screen and (max-width: 768px) {
+  .owner-submit-form-container {
+    margin: 0;
+  }
+}
+
+.home-img {
+  width: 100%;
+  height: 500px;
 }

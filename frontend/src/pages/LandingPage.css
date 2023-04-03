@@ -52,6 +52,12 @@
   font-family: Baskerville, sans-serif;
   padding: 1rem;
 }
+.user_name {
+  padding: 0.2rem 0.5rem;
+}
+.user_name:hover {
+  box-shadow: #dd1c1a 0px 0px 5px 1px;
+}
 
 .button-div {
   display: flex;

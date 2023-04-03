@@ -1,48 +1,45 @@
-label, input {
-    display: block;
-  }
-  
-  input {
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 70%;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: 1px 1px 10px 1px gray;
-  }
-  form button {
-    background: var(--primary);
-    border: 0;
-    color: #fff;
-    padding: 10px;
-    font-family: "Poppins";
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: green;
-  }
-  div.error {
-    padding: 10px;
-    background: #ffefef;
-    border: 1px solid var(--error);
-    color: var(--error);
-    border-radius: 4px;
-    margin: 20px 0;
-  }
-  
-  
+label,
+input {
+  display: block;
+}
 
-  
-  .container-navbar-main{
-    text-align: center;
-    background-color: white;
-    padding: 20px;
-  }
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 10px 1px gray;
+}
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: green;
+}
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
 
-  .create{
-    margin: 2% 5%;
-    background-color: #E8F9FD;
-    border-radius: 20px;
-    padding: 0% 5% 3%;
-  }
+.container-navbar-main {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+}
+
+.create {
+  background-color: #e8f9fd;
+  border-radius: 20px;
+  padding: 2rem;
+}

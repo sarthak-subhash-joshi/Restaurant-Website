@@ -5,7 +5,7 @@ const express = require("express");
 // Requiring Mongoose
 const mongoose = require("mongoose");
 
-const menuRoutes = require("./routes/menu");
+const menuRoutes = require("./routes/menuRouter");
 const userRouter = require("./routes/userRouter");
 
 const app = express();

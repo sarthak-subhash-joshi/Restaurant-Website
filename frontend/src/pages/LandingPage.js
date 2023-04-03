@@ -48,6 +48,7 @@ const LandingPage = () => {
           {isUserLoggedIn ? (
             <h4
               style={{ color: "black", cursor: "pointer", margin: "0px" }}
+              className="user_name"
               onClick={logoutUser}
             >
               Hi, {user?.name}
