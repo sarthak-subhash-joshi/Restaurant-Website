@@ -27,7 +27,6 @@ const Register = () => {
         console.log(error);
       }
     };
-
     tokenCheck();
   }, []);
 
@@ -41,8 +40,10 @@ const Register = () => {
 
   const registerUser = async () => {
     try {
-      if (userData.password !== userData.confirmPass)
-        return alert("Password does not match");
+      if (userData.password !== userData.confirmPass) {
+        toast.error("Password does not match");
+        return;
+      }
       const data = {
         email: userData.email,
         name: userData.name,
@@ -63,9 +64,6 @@ const Register = () => {
 
   return (
     <div className="row register-page">
-      <div className="img-col">
-        <img src={loginImg} className="bgimg" alt="bgimg" />
-      </div>
       <h1 className="title-content">
         Register fast!
         <br />
