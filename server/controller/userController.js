@@ -128,49 +128,10 @@ const logout = (req, res) => {
   });
 };
 
-const adminLogin = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-
-    const user = await User.findOne({ email });
-    if (user != null) {
-      const isMatch = await bcrypt.compare(password, user.password);
-      if (isMatch && user.isOwner) {
-        const token = jwt.sign({ user_id: user._id }, process.env.SECRET_KEY);
-        res.cookie("jwt", token, { httpOnly: true, maxAge: 2592000000 });
-        res.status(200).json({
-          status: "success",
-          data: {
-            user,
-          },
-          token,
-          message: "User logged in successfully",
-        });
-      } else {
-        res.status(400).json({
-          status: "fail",
-          message: "Invalid credentials",
-        });
-      }
-    } else {
-      res.status(400).json({
-        status: "fail",
-        message: "User does not exist",
-      });
-    }
-  } catch (error) {
-    res.status(400).json({
-      status: "fail",
-      message: error.message,
-    });
-  }
-};
-
 module.exports = {
   getAllUsers,
   registerUser,
   loginUser,
   getUserByID,
   logout,
-  adminLogin,
 };

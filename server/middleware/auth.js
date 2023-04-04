@@ -6,7 +6,6 @@ const Authenticated = async (req, res, next) => {
     const token = req.cookies.jwt;
     if (token) {
       const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
-      console.log(verifyUser);
       req.user = verifyUser.user_id;
       next();
     } else {

@@ -5,7 +5,6 @@ const {
   registerUser,
   loginUser,
   getUserByID,
-  adminLogin,
   logout,
 } = require("../controller/userController");
 const Authenticated = require("../middleware/auth");
@@ -22,7 +21,5 @@ userRouter.get("/getAll", Authenticated, getAllUsers);
 userRouter.get("/getById", Authenticated, getUserByID);
 // Logout user
 userRouter.get("/logout", logout);
-// admin login
-userRouter.post("/admin/login", adminLogin);
 
 module.exports = userRouter;
