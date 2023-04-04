@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Register.css";
-import loginImg from "./bg_img_restro.jpg";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,7 +19,6 @@ const Register = () => {
       try {
         const user = await axios.get("/auth/getById");
         if (user.status === 200) {
-          console.log(user.data);
           navigate("/");
         }
       } catch (error) {

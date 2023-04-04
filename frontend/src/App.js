@@ -4,11 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import HomeUser from "./pages/user/Home";
 import HomeOwner from "./pages/restaurant_owner/Home";
 import Menu from "./pages/user/Menu";
-import Gallery from "./pages/user/Gallery";
-import DetailsOfItem from "./pages/user/DetailsOfItem";
-import Login from "./pages/user/Login";
-import Register from "./pages/user/Register";
-import AdminLogin from "./pages/restaurant_owner/AdminLogin";
+import Gallery from "./pages/user/Gallery/Gallery";
+import DetailsOfItem from "./pages/user/Item/DetailsOfItem";
+import Login from "./pages/user/Login/Login";
+import Register from "./pages/user/Register/Register";
 
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
           <Route path="/userMenu/menu/:id" element={<DetailsOfItem />} />
 
           {/* owner side routes */}
-          <Route path="/admin_owner" element={<AdminLogin />} />
           <Route path="/owner" element={<HomeOwner />} />
         </Routes>
       </BrowserRouter>

@@ -16,7 +16,6 @@ export const UserProvider = ({ children }) => {
     const tokenCheck = async () => {
       try {
         const userData = await axios.get("/auth/getById");
-        console.log(userData);
         if (userData.status === 200 && !user) {
           setUser(userData.data.data.user);
           setIsUserLoggedIn(true);

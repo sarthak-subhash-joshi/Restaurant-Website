@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import "./LandingPage.css";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import myImg from "./user/myImage.jfif";
+import { Link, useNavigate } from "react-router-dom";
+import myImg from "../assets/myImage.jfif";
 import { useUserContext } from "../context/userContext";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -10,7 +10,6 @@ import "react-toastify/dist/ReactToastify.css";
 const LandingPage = () => {
   const navigate = useNavigate();
   const { user, isUserLoggedIn } = useUserContext();
-  console.log(user, isUserLoggedIn);
 
   const logoutUser = async () => {
     try {

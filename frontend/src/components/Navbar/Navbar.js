@@ -9,8 +9,8 @@ const Navbar = () => {
         className="navbar navbar-expand-lg sticky-top"
         style={{ backgroundColor: "white" }}
       >
-        <NavLink to="/" className="navbar-brand" aria-current="page">
-          <h5 className="name">Retsurant</h5>
+        <NavLink to="/" className="navbar-brand name-link" aria-current="page">
+          <h5 className="brand-name">Retsurant</h5>
         </NavLink>
         <button
           className="navbar-toggler"
