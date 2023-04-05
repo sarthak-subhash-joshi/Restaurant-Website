@@ -42,7 +42,7 @@ const About = () => {
 
         <div className="container-Gallery">
           <div
-            className="row "
+            className="row"
             style={{
               display: "flex",
               justifyContent: "center",

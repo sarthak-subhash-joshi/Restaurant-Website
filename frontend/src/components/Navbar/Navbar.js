@@ -7,10 +7,12 @@ const Navbar = () => {
     <>
       <nav
         className="navbar navbar-expand-lg sticky-top"
-        style={{ backgroundColor: "white" }}
+        style={{ backgroundColor: "white", fontFamily: "Poppins" }}
       >
-        <NavLink to="/" className="navbar-brand name-link" aria-current="page">
-          <h5 className="brand-name">Retsurant</h5>
+        <NavLink to="/" className="" aria-current="page">
+          <h3 className="brand-name" styles={{ fontFamily: "Poppins" }}>
+            Restaurant
+          </h3>
         </NavLink>
         <button
           className="navbar-toggler"
@@ -26,12 +28,20 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink to="/userMenu" className="nav-link">
-                Menu
+              <NavLink
+                to="/userMenu"
+                className=""
+                styles={{ fontFamily: "Poppins" }}
+              >
+                <span style={{ marginRight: "15px" }}>Menu</span>
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/gallery" className="nav-link">
+              <NavLink
+                to="/gallery"
+                className=""
+                styles={{ fontFamily: "Poppins" }}
+              >
                 Gallery
               </NavLink>
             </li>
