@@ -76,7 +76,9 @@ const LandingPage = () => {
             <Link to="/userMenu" className="btn btn-danger btn-menu">
               View Menu
             </Link>
-            <button className="btn btn-outline-danger">Order Now!</button>
+            <Link to="/cart" className="btn btn-outline-danger">
+              Order Now!
+            </Link>
           </div>
         </div>
         <div className="img-block col-md-6">

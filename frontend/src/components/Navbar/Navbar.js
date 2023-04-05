@@ -42,7 +42,16 @@ const Navbar = () => {
                 className=""
                 styles={{ fontFamily: "Poppins" }}
               >
-                Gallery
+                <span style={{ marginRight: "15px" }}>Gallery</span>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/cart"
+                className=""
+                styles={{ fontFamily: "Poppins" }}
+              >
+                Cart
               </NavLink>
             </li>
           </ul>

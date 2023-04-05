@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../../../components/Navbar/Navbar";
 import "./Gallery.css";
-import Footer from "../../../components/Footer";
 import ImageCard from "../ImageCard";
 import Menu from "../../../API/MenuApi";
 
@@ -52,8 +51,6 @@ const About = () => {
             <ImageCard Card={cardMenu} />
           </div>
         </div>
-
-        <Footer />
       </div>
     </>
   );

@@ -8,6 +8,7 @@ import Gallery from "./pages/user/Gallery/Gallery";
 import DetailsOfItem from "./pages/user/Item/DetailsOfItem";
 import Login from "./pages/user/Login/Login";
 import Register from "./pages/user/Register/Register";
+import Cart from "./pages/user/cart/cart";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/userMenu" element={<Menu />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/userMenu/menu/:id" element={<DetailsOfItem />} />
+          <Route path="/cart" element={<Cart />} />
 
           {/* owner side routes */}
           <Route path="/owner" element={<HomeOwner />} />

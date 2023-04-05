@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Navbar from "../../../components/Navbar/Navbar";
+import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./DetailsOfItem.css";
+import { toast, ToastContainer } from "react-toastify";
 
 const DetailsOfItem = () => {
   const [item, setItem] = useState("");
@@ -18,6 +20,19 @@ const DetailsOfItem = () => {
   };
 
   fetchItem();
+
+  const addToCart = async () => {
+    try {
+      const response = await axios.post(`/cart/addToCart/${id}`);
+      // console.log(response);
+
+      if (response.status === 200) {
+        toast.success(response.data.message);
+      }
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
+  };
 
   return (
     <>
@@ -54,8 +69,16 @@ const DetailsOfItem = () => {
           <div className="description-container">
             <p>{item.description}</p>
           </div>
+          <button
+            className="btn btn-primary"
+            style={{ marginTop: "1rem" }}
+            onClick={addToCart}
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

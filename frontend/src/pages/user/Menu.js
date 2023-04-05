@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Menu.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import Footer from "../../components/Footer";
 import { useUserContext } from "../../context/userContext";
 
 const Menu = () => {
@@ -67,8 +66,6 @@ const Menu = () => {
             })}
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };
