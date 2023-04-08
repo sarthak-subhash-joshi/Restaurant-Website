@@ -9,10 +9,10 @@ const Navbar = () => {
         className="navbar navbar-expand-lg sticky-top"
         style={{ backgroundColor: "white", fontFamily: "Poppins" }}
       >
-        <NavLink to="/" className="" aria-current="page">
-          <h3 className="brand-name" styles={{ fontFamily: "Poppins" }}>
+        <NavLink to="/" className="" aria-current="page" style={{textDecoration: "none", fontSize: "30px"}}>
+          <p className="brand-name" styles={{ fontFamily: "Poppins" }}>
             Restaurant
-          </h3>
+          </p>
         </NavLink>
         <button
           className="navbar-toggler"
@@ -31,7 +31,7 @@ const Navbar = () => {
               <NavLink
                 to="/userMenu"
                 className=""
-                styles={{ fontFamily: "Poppins" }}
+                style={{textDecoration: "none", fontSize: "20px"}}
               >
                 <span style={{ marginRight: "15px" }}>Menu</span>
               </NavLink>
@@ -40,7 +40,7 @@ const Navbar = () => {
               <NavLink
                 to="/gallery"
                 className=""
-                styles={{ fontFamily: "Poppins" }}
+                style={{textDecoration: "none", fontSize: "20px"}}
               >
                 <span style={{ marginRight: "15px" }}>Gallery</span>
               </NavLink>
@@ -49,7 +49,7 @@ const Navbar = () => {
               <NavLink
                 to="/cart"
                 className=""
-                styles={{ fontFamily: "Poppins" }}
+                style={{textDecoration: "none", fontSize: "20px"}}
               >
                 Cart
               </NavLink>

@@ -51,7 +51,7 @@ const Cart = () => {
                     <p>
                       <strong>Price: </strong>&nbsp;₹{elem.price}
                     </p>
-                    <div style={{ textAlign: "center", margin: "10px" }}>
+                    <div style={{ textAlign: "center", marginBottom: "10px", display:"flex", justifyContent:"space-between" }}>
                       {/* <button type="button" class="btn btn-success" >View Details</button> */}
                       <NavLink
                         to={`menu/${elem._id}`}
@@ -59,6 +59,12 @@ const Cart = () => {
                       >
                         View Details
                       </NavLink>
+                      <button
+                        className="btn btn-danger"
+                        style={{  }}
+                      >
+                        Delete
+                      </button>
                     </div>
                   </div>
                 </>

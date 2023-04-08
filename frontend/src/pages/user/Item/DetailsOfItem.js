@@ -37,36 +37,38 @@ const DetailsOfItem = () => {
   return (
     <>
       <Navbar />
-
       <div className="details-main-container row">
-        <div className="col-lg-5">
-          <img className="details-image" src={item.img_url} alt="" />
+        <div className="col-lg-6">
+          <img
+            className="details-image"
+            src={item.img_url}
+            alt=""
+            style={{ width: "100%" }}
+          />
         </div>
 
         <div className="col-lg-6">
-          <div className="landing-page-top">
-            <h2>
-              Welcome to <strong>PCCoE</strong> Restaurant
-            </h2>
+          <div
+            style={{
+              marginBottom: "30px",
+              fontWeight: "bold",
+              fontSize: "40px",
+            }}
+          >
+            <p>{item.title}</p>
           </div>
-
-          <div style={{ textAlign: "center", margin: "20px" }}>
-            <h2>{item.title}</h2>
-          </div>
-
-          <p style={{ fontSize: "30px" }}>
-            <strong>Price : </strong>
-            {item.price} ₹
-          </p>
-          <p style={{ fontSize: "30px" }}>
-            <strong>Discount : </strong>
-            {item.discount} %
-          </p>
-          <p style={{ fontSize: "30px" }}>
-            <strong>Description : </strong>
-          </p>
 
           <div className="description-container">
+            <p style={{ fontSize: "20px" }}>
+              <strong>Price : </strong>
+              {item.price} ₹
+            </p>
+
+            <p style={{ fontSize: "20px" }}>
+              <strong>Discount : </strong>
+              {item.discount} %
+            </p>
+            <strong>Description : </strong>
             <p>{item.description}</p>
           </div>
           <button
