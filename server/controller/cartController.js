@@ -57,4 +57,38 @@ const getCartItems = async (req, res) => {
   }
 };
 
-module.exports = { addToCart, getCartItems };
+// Remove item from cart
+const removeItem = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findById(req.user);
+    const item = await RestaurantMenu.findById(id);
+    if (item) {
+      if (user.cart.includes(id)) {
+        user.cart.pull(item);
+        await user.save();
+        res.status(200).json({
+          status: "success",
+          message: "Item removed from cart",
+        });
+      } else {
+        res.status(400).json({
+          status: "fail",
+          message: "Item not in cart",
+        });
+      }
+    } else {
+      res.status(400).json({
+        status: "fail",
+        message: "Item does not exist",
+      });
+    }
+  } catch (error) {
+    res.status(400).json({
+      status: "fail",
+      message: error.message,
+    });
+  }
+};
+
+module.exports = { addToCart, getCartItems, removeItem };

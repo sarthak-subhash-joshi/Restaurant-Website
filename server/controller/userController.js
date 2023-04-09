@@ -73,7 +73,10 @@ const loginUser = async (req, res) => {
     if (user != null) {
       const isMatch = await bcrypt.compare(password, user.password);
       if (isMatch) {
-        const token = jwt.sign({ user_id: user._id }, process.env.SECRET_KEY);
+        const token = jwt.sign(
+          { user_id: user._id, owner: user.isOwner },
+          process.env.SECRET_KEY
+        );
         res.cookie("jwt", token, { httpOnly: true, maxAge: 2592000000 });
         res.status(200).json({
           status: "success",

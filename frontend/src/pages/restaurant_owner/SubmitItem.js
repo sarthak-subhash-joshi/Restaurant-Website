@@ -29,6 +29,8 @@ const SubmitItem = () => {
       setTimeout(() => {
         window.location.reload();
       }, 3000);
+    } else if (response.status === 401) {
+      toast.error("Unauthorized owner");
     } else {
       toast.error(response.data.error);
     }

@@ -6,14 +6,7 @@ import { useUserContext } from "../../context/userContext";
 
 const Menu = () => {
   const [items, setItems] = useState(null);
-  const { user, isUserLoggedIn } = useUserContext();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!isUserLoggedIn) {
-      navigate("/login");
-    }
-  }, []);
 
   useEffect(() => {
     const fetchItems = async () => {
